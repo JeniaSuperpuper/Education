@@ -1,42 +1,161 @@
-#root {
-  max-width: 1280px;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Nunito;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url("./assets/fonts/Nunito-Regular.ttf");
+}
+li, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.container {
+  width: 1440px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 27px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header__logo h1 {
+  color: #333333;
+  font-weight: 700;
+  font-size: 32px;
+}
+.header__navigation {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+.header__navigation li button {
+  color: #0A033C;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform ease-in-out 0.1s;
+}
+.header__navigation li button:hover {
+  color: #000000;
+  font-weight: 600;
+  transform: scale(1.03);
+}
+.header__registration {
+  display: flex;
+  align-items: center;
+  gap: 43px;
+}
+.header__registration-sign {
+  color: #1F1C14;
+}
+.header__registration-sign:hover {
+  border-bottom: 1px solid #1F1C14;
+}
+.header__registration-login {
+  color: #fff;
+  background-color: #362B0E;
+  border-radius: 16px;
+  padding: 16px 37.5px;
+  transition: transform ease-in-out 0.1s;
+}
+.header__registration-login:hover {
+  transform: scale(1.03);
+}
+.header__registration button {
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+}
+.modal.active {
+  pointer-events: all;
+  opacity: 1;
+}
+.modal__content {
+  background: white;
+  padding: 50px;
+  transform: scale(0);
+  transition: 0.3s ease-in-out all;
+}
+.modal__content.active {
+  transform: scale(1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.form__auth {
+  text-align: left;
 }
-
-.card {
-  padding: 2em;
+.form__auth.title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 50px;
 }
-
-.read-the-docs {
-  color: #888;
+.form__auth.input {
+  padding-top: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #0A033C;
+  width: 100%;
+  font-size: 18px;
 }
+.form__auth.input:user-invalid {
+  border-bottom: 1px solid red;
+}
+.form__auth.div {
+  display: flex;
+  flex-direction: column;
+}
+.form__auth.div p {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.form__auth.button {
+  background-color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 18px 135px;
+  color: #fff;
+  margin-top: 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.form__auth.button:hover {
+  opacity: 0.9;
+}
+.form__auth .info {
+  margin-top: 60px;
+}/*# sourceMappingURL=App.css.map */
