@@ -48,9 +48,11 @@ button{
     }
 
     &__logo{
-        display: flex;
-        align-items: center;
-        gap: 16px;
+        a{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
 
         h1{
             color: $header_logo-color;
@@ -65,7 +67,7 @@ button{
         gap: 56px;
 
         li{
-            button{
+            button, a{
                 color: $header_nav-color;
                 font-weight: 500;
                 font-size: 20px;

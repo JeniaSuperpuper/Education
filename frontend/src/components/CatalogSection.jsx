@@ -1,12 +1,14 @@
-import image from '../assets/images/Catalog_image.png'
+import React from 'react';
+import { Link } from 'react-router-dom'; // Добавьте этот импорт
+import image from '../assets/images/Catalog_image.png';
 
-export default function Catalog () {
+export default function Catalog() {
     return (
         <section className="catalog">
             <div className="container">
                 <div className="catalog__wrapper">
                     <div className="catalog__navigation">
-                        <button>Home</button>
+                        <Link to="/">Home</Link> {/* Используем Link для навигации */}
                         <p>|</p>
                         <button>Pricing</button>
                     </div>
@@ -23,5 +25,5 @@ export default function Catalog () {
                 </div>
             </div>
         </section>
-    )
+    );
 }

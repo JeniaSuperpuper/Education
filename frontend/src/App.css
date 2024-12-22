@@ -34,7 +34,7 @@ button {
   justify-content: space-between;
   margin-top: 27px;
 }
-.header__logo {
+.header__logo a {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -49,14 +49,14 @@ button {
   align-items: center;
   gap: 56px;
 }
-.header__navigation li button {
+.header__navigation li button, .header__navigation li a {
   color: #0A033C;
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
   transition: transform ease-in-out 0.1s;
 }
-.header__navigation li button:hover {
+.header__navigation li button:hover, .header__navigation li a:hover {
   color: #FAB900;
   font-weight: 600;
   transform: scale(1.03);

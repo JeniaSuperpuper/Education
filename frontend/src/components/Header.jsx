@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/images/logo.svg';
 import RegistrationForm from './registration';
 import AuthForm from './login';
@@ -15,11 +16,13 @@ export default function Header() {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__logo">
-            <img src={logo} alt="logo" />
-            <h1>Edudu</h1>
+            <Link to="/">
+              <img src={logo} alt="logo" />
+              <h1>Edudu</h1>
+            </Link>
           </div>
           <ul className="header__navigation">
-            <li><button href="#">Course</button></li>
+            <li><Link to="/catalog">Course</Link></li>
             <li><button href="#">Teacher</button></li>
             <li><button href="#">How to use</button></li>
             <li><button href="#">About Us</button></li>
