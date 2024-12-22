@@ -25,3 +25,29 @@ class Course(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Lesson(models.Model):
+    course = models.ForeignKey(
+        Course,
+        on_delete=models.CASCADE,
+        related_name='lessons'
+    )
+    title = models.CharField(
+        max_length=128
+    )
+    slug = models.SlugField(
+        max_length=128
+    )
+    number = models.PositiveSmallIntegerField()
+    description = models.TextField(
+        max_length=512
+    )
+    video = models.FileField(
+        upload_to='videos/',
+        blank=True,
+        null=True
+    )
+
+    def __str__(self):
+        return f'Lesson "{self.title}" in {self.course.title}'
