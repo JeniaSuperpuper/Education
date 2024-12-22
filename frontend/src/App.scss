@@ -4,6 +4,8 @@ $header_nav-color-hover: #000000;
 $header_reg-color: #362B0E;
 $text_main: #1F1C14;
 $white-color: #fff;
+$bg-color: #F9F9F9;
+$yellow_bg-color: #FABA00;
 
 *{
     padding: 0;
@@ -102,7 +104,19 @@ button{
                 transform: scale(1.03)
             }
         }
-        
+
+        &-logout{
+            color: $white-color;
+            background-color: $header_reg-color;
+            border-radius: 16px;
+            padding: 16px 37.5px;
+            transition: transform ease-in-out .1s;
+
+            &:hover{
+                transform: scale(1.03)
+            }
+        }
+
         button{
             cursor: pointer;
             font-size: 16px;
@@ -192,6 +206,60 @@ button{
         }
         .info{
             margin-top: 60px;
+        }
+    }
+}
+
+.main{
+    background-color: $bg-color;
+    margin-top: 27px;
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title{
+        margin-top: 153px;
+        margin-left: 18px;
+
+        h1{
+            font-size: 48px;
+            font-weight: 400;
+            width: 610px;
+        }
+
+        p{
+            font-size: 16px;
+            width: 644px;
+            margin-top: 16px;
+        }
+
+        button{
+            background-color: $yellow_bg-color;
+            font-weight: 500;
+            color: #000;
+            font-size: 24px;
+            border-radius: 16px;
+            margin-top: 56px;
+            padding: 17px 67.5px;
+            cursor: pointer;
+            transition: all ease-in-out .2s;
+
+            &:hover{
+                transform: scale(1.03);
+                opacity: .95;
+            }
+        }
+    }
+
+    &__image{
+        background: url('./assets/images/Main_bg.svg') no-repeat center center / cover;
+        width: 100%;
+
+        img{
+            margin-left: 200px;
+            margin-top: 153px;
         }
     }
 }

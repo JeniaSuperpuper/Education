@@ -82,6 +82,16 @@ button {
 .header__registration-login:hover {
   transform: scale(1.03);
 }
+.header__registration-logout {
+  color: #fff;
+  background-color: #362B0E;
+  border-radius: 16px;
+  padding: 16px 37.5px;
+  transition: transform ease-in-out 0.1s;
+}
+.header__registration-logout:hover {
+  transform: scale(1.03);
+}
 .header__registration button {
   cursor: pointer;
   font-size: 16px;
@@ -158,4 +168,50 @@ button {
 }
 .form__auth .info {
   margin-top: 60px;
+}
+
+.main {
+  background-color: #F9F9F9;
+  margin-top: 27px;
+}
+.main__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.main__title {
+  margin-top: 153px;
+  margin-left: 18px;
+}
+.main__title h1 {
+  font-size: 48px;
+  font-weight: 400;
+  width: 610px;
+}
+.main__title p {
+  font-size: 16px;
+  width: 644px;
+  margin-top: 16px;
+}
+.main__title button {
+  background-color: #FABA00;
+  font-weight: 500;
+  color: #000;
+  font-size: 24px;
+  border-radius: 16px;
+  margin-top: 56px;
+  padding: 17px 67.5px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.main__title button:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+.main__image {
+  background: url("./assets/images/Main_bg.svg") no-repeat center center/cover;
+  width: 100%;
+}
+.main__image img {
+  margin-left: 200px;
+  margin-top: 153px;
 }/*# sourceMappingURL=App.css.map */

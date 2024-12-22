@@ -62,7 +62,7 @@ export default function RegistrationForm() {
 
   return (
     <div>
-      <h1 className='form__auth title'>Регистрация</h1>
+      <h1 className='form__auth title'>Register</h1>
       <form className='form__auth form' onSubmit={handleSubmit}>
         <div className='form__auth div'>
             <label>
@@ -113,7 +113,7 @@ export default function RegistrationForm() {
             </label>
         </div>
         {message && <p className='form__auth info'>{message}</p>}
-        <button className='form__auth button' type="submit">Зарегистрироваться</button>
+        <button className='form__auth button' type="submit">Register</button>
       </form>
     </div>
   );
