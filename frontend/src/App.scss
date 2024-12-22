@@ -1,11 +1,12 @@
 $header_logo-color: #333333;
 $header_nav-color: #0A033C;
-$header_nav-color-hover: #000000;
+$header_nav-color-hover: #FAB900;
 $header_reg-color: #362B0E;
 $text_main: #1F1C14;
 $white-color: #fff;
 $bg-color: #F9F9F9;
 $yellow_bg-color: #FABA00;
+
 
 *{
     padding: 0;
@@ -260,6 +261,28 @@ button{
         img{
             margin-left: 200px;
             margin-top: 153px;
+        }
+    }
+}
+
+.catalog{
+    &__navigation{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        color: $text_main;
+
+        p{
+            opacity: .4;
+        }
+
+        button{
+            font-size: 16px;
+            opacity: .4;
+
+            &:hover{
+                opacity: 1;
+            }
         }
     }
 }

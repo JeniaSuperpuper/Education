@@ -57,7 +57,7 @@ button {
   transition: transform ease-in-out 0.1s;
 }
 .header__navigation li button:hover {
-  color: #000000;
+  color: #FAB900;
   font-weight: 600;
   transform: scale(1.03);
 }
@@ -214,4 +214,21 @@ button {
 .main__image img {
   margin-left: 200px;
   margin-top: 153px;
+}
+
+.catalog__navigation {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1F1C14;
+}
+.catalog__navigation p {
+  opacity: 0.4;
+}
+.catalog__navigation button {
+  font-size: 16px;
+  opacity: 0.4;
+}
+.catalog__navigation button:hover {
+  opacity: 1;
 }/*# sourceMappingURL=App.css.map */
