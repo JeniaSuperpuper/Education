@@ -216,11 +216,17 @@ button {
   margin-top: 153px;
 }
 
+.catalog {
+  background-color: #F9F9F9;
+  width: 100%;
+  margin-top: 27px;
+}
 .catalog__navigation {
   display: flex;
   align-items: center;
   gap: 5px;
   color: #1F1C14;
+  padding-top: 24px;
 }
 .catalog__navigation p {
   opacity: 0.4;
@@ -228,7 +234,46 @@ button {
 .catalog__navigation button {
   font-size: 16px;
   opacity: 0.4;
+  cursor: pointer;
 }
 .catalog__navigation button:hover {
   opacity: 1;
+}
+.catalog__banner {
+  background: url(./assets/images/Catalog_bg.svg) no-repeat center center/cover;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  border-radius: 20px;
+}
+.catalog__banner-text {
+  margin-left: 207px;
+  margin-top: 43px;
+}
+.catalog__banner-text h1 {
+  font-size: 40px;
+  font-weight: 600;
+  width: 512px;
+}
+.catalog__banner-text p {
+  font-size: 20px;
+  width: 452px;
+}
+.catalog__banner-text button {
+  background-color: #FABA00;
+  font-weight: 500;
+  color: #000;
+  font-size: 24px;
+  border-radius: 16px;
+  margin-top: 36px;
+  padding: 17px 67.5px;
+  cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.catalog__banner-text button:hover {
+  transform: scale(1.03);
+  opacity: 0.95;
+}
+.catalog__banner-image {
+  margin-left: 200px;
 }/*# sourceMappingURL=App.css.map */

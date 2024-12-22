@@ -266,11 +266,15 @@ button{
 }
 
 .catalog{
+    background-color: $bg-color;
+    width: 100%;
+    margin-top: 27px;
     &__navigation{
         display: flex;
         align-items: center;
         gap: 5px;
         color: $text_main;
+        padding-top: 24px;
 
         p{
             opacity: .4;
@@ -279,10 +283,55 @@ button{
         button{
             font-size: 16px;
             opacity: .4;
+            cursor: pointer;
 
             &:hover{
                 opacity: 1;
             }
+        }
+    }
+
+    &__banner{
+        background: url(./assets/images/Catalog_bg.svg) no-repeat center center / cover;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-radius: 20px;
+
+        &-text{
+            margin-left: 207px;
+            margin-top: 43px;
+            h1{
+                font-size: 40px;
+                font-weight: 600;
+                width: 512px;
+            }
+
+            p{
+                font-size: 20px;
+                width: 452px;
+            }
+
+            button{
+                background-color: $yellow_bg-color;
+                font-weight: 500;
+                color: #000;
+                font-size: 24px;
+                border-radius: 16px;
+                margin-top: 36px;
+                padding: 17px 67.5px;
+                cursor: pointer;
+                transition: all ease-in-out .2s;
+    
+                &:hover{
+                    transform: scale(1.03);
+                    opacity: .95;
+                }
+            }
+        }
+
+        &-image{
+            margin-left: 200px;
         }
     }
 }

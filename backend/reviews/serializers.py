@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Feedback, Review
+from .models import Feedback, Review, LessonReview
 
 
 class FeedbackSerializer(serializers.ModelSerializer):
@@ -7,7 +7,13 @@ class FeedbackSerializer(serializers.ModelSerializer):
         model = Feedback
         fields = '__all__'
 
+
 class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
+        fields = '__all__'
+
+class LessonReviewSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = LessonReview
         fields = '__all__'

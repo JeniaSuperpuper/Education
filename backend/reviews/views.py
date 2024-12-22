@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from rest_framework import generics
-from .serializers import FeedbackSerializer, ReviewSerializer
-from .models import Feedback, Review
+from .serializers import FeedbackSerializer, ReviewSerializer, LessonReviewSerializer
+from .models import Feedback, Review, LessonReview
 
 
 class FeedbackList(generics.ListCreateAPIView):
@@ -19,6 +18,17 @@ class ReviewList(generics.ListCreateAPIView):
 class ReviewUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
+
+
+class LessonReviewList(generics.ListCreateAPIView):
+    queryset = LessonReview.objects.all()
+    serializer_class = LessonReviewSerializer
+
+
+class LessonReviewUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
+    queryset = LessonReview.objects.all()
+    serializer_class = LessonReviewSerializer
+
 
 
 
