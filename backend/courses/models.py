@@ -6,6 +6,9 @@ class Category(models.Model):
     title = models.CharField(max_length=128)
     slug = models.SlugField(max_length=128, unique=True)
 
+    class Meta:
+        verbose_name_plural = 'categories'
+
     def __str__(self):
         return self.title
 
