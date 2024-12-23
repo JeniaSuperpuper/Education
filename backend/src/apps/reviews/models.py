@@ -1,6 +1,9 @@
 from django.db import models
-from apps.courses.models import CustomUser, Course, Lesson
+from apps.courses.models import Course, Lesson
 from django.core.validators import MinValueValidator, MaxValueValidator
+
+from apps.users.models import CustomUser
+
 
 class Feedback(models.Model):
     user = models.ForeignKey(

@@ -1,5 +1,4 @@
 from rest_framework.views import APIView
-from yaml import serialize
 
 from apps.users.serializers import UserSerializer, ChildSerializer, ParentRegistrationSerializer, \
     ChildCreationSerializer
@@ -42,19 +41,29 @@ class RegisterParentView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from .models import Parent, Child, CustomUser
+
+
 class AddChildView(APIView):
-
     def post(self, request):
-        if request.user.role != 'P':  # Проверяем, что пользователь — родитель
-            return Response({"error": "Only parents can add children"}, status=status.HTTP_403_FORBIDDEN)
+        parent_user = request.user
+        if parent_user.role != "P":
+            return Response({"error": "Только родитель может добавлять детей"}, status=status.HTTP_403_FORBIDDEN)
 
-        data = request.data.copy()
-        data['parent_id'] = request.user.parent.id  # Привязываем ребенка к текущему родителю
-        serializer = ChildCreationSerializer(data=data)
-        if serializer.is_valid():
-            serializer.save()
-            return Response({"message": "Child added successfully"}, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        child_name = request.data.get("name")
+        child_age = request.data.get("age")
+
+        if not child_name or not child_age:
+            return Response({"error": "Имя и возраст обязательны"}, status=status.HTTP_400_BAD_REQUEST)
+
+        parent = Parent.objects.get(user=parent_user)
+        child_user = CustomUser.objects.create(username=child_name, role="C")
+        child = Child.objects.create(name=child_name, age=child_age, user=child_user, parent=parent)
+
+        return Response({"message": "Ребенок успешно добавлен", "child_id": child.id}, status=status.HTTP_201_CREATED)
 
 
 @api_view(['GET'])

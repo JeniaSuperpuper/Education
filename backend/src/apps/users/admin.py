@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.users.models import CustomUser, Child
+from apps.users.models import CustomUser, Child, Teacher
 
 
 @admin.register(CustomUser)
@@ -9,3 +9,7 @@ class UserAdmin(admin.ModelAdmin):
 @admin.register(Child)
 class ChildAdmin(admin.ModelAdmin):
     list_display = ['name', 'age', 'parent', 'id']
+
+@admin.register(Teacher)
+class TeacherAdmin(admin.ModelAdmin):
+    list_display = ['user', 'id']

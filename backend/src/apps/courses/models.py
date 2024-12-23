@@ -1,5 +1,7 @@
+from tkinter.constants import CASCADE
+
 from django.db import models
-from apps.users.models import CustomUser
+
 
 
 class Category(models.Model):
@@ -18,8 +20,7 @@ class Course(models.Model):
     slug = models.SlugField(max_length=256, unique=True)
     description = models.TextField(max_length=1024)
     image = models.ImageField(upload_to='images', null=True, blank=True)
-    teachers = models.ManyToManyField(CustomUser, related_name='courses_as_teacher')
-    students = models.ManyToManyField(CustomUser, related_name='courses_as_student', null=True, blank=True)
+    teachers = models.ForeignKey('users.Teacher', on_delete=models.CASCADE, related_name='courses_as_teacher')
     price = models.DecimalField(max_digits=10, decimal_places=2)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
