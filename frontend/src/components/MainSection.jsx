@@ -1,7 +1,8 @@
 import image from '../assets/images/Main_photo.png';
-
+import Lessons from './LessonsSection';
 export default function Main() {
     return (
+    <>
         <section className="main">
             <div className="container">
                 <div className="main__wrapper">
@@ -18,5 +19,6 @@ export default function Main() {
                 </div>
             </div>
         </section>
-    );
+    </>
+    )
 }
