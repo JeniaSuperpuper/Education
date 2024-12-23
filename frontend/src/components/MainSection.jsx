@@ -1,5 +1,6 @@
 import image from "../assets/images/Main_photo.png";
 import Lessons from "./LessonsSection";
+import About from "./About";
 export default function Main() {
   return (
     <>
@@ -26,6 +27,7 @@ export default function Main() {
         </div>
       </section>
       <Lessons />
+      <About/>
     </>
   );
 }

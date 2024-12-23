@@ -288,7 +288,7 @@ button {
   text-align: center;
   flex-direction: column;
   padding-top: 150px;
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   padding-bottom: 150px;
 }
 .lessons__text {
@@ -331,4 +331,59 @@ button {
   padding: 20px 32px 20px 32px;
   background-color: #fff;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.about__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  max-height: 590.53px;
+  padding-top: 73px;
+  padding-bottom: 72.47px;
+}
+.about__image {
+  max-width: 633.43px;
+  max-height: 590.53px;
+}
+.about__text {
+  max-width: 553px;
+  max-height: 411px;
+  gap: 41px;
+  display: flex;
+  flex-direction: column;
+}
+.about__checkbox {
+  max-width: 28px;
+  max-height: 28px;
+}
+.about__mainText {
+  max-width: 500px;
+  max-height: 186px;
+}
+.about__mainText-text {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 62.4px;
+}
+.about__paragraphes {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.about__paragraph {
+  display: flex;
+  align-items: center;
+  width: 449px;
+  height: 34px;
+  gap: 16px;
+  padding-bottom: 24px;
+}
+.about__paragraph-text {
+  width: 405px;
+  height: 34px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 33.6px;
 }
