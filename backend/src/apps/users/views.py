@@ -32,6 +32,7 @@ def child_list(request: HttpRequest):
     serializer = ChildSerializer(child, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 class RegisterParentView(APIView):
     def post(self, request):
         serializer = ParentRegistrationSerializer(data=request.data)
@@ -42,7 +43,6 @@ class RegisterParentView(APIView):
 
 
 class AddChildView(APIView):
-
 
     def post(self, request):
         if request.user.role != 'P':  # Проверяем, что пользователь — родитель
@@ -55,9 +55,6 @@ class AddChildView(APIView):
             serializer.save()
             return Response({"message": "Child added successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-
-
 
 
 @api_view(['GET'])
