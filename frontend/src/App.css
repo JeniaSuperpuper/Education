@@ -9,7 +9,8 @@
   font-family: Nunito;
   src: url("./assets/fonts/Nunito-Regular.ttf");
 }
-li, ul {
+li,
+ul {
   list-style: none;
 }
 
@@ -49,16 +50,18 @@ button {
   align-items: center;
   gap: 56px;
 }
-.header__navigation li button, .header__navigation li a {
-  color: #0A033C;
+.header__navigation li button,
+.header__navigation li a {
+  color: #0a033c;
   font-weight: 500;
   font-size: 20px;
   cursor: pointer;
   transition: transform ease-in-out 0.1s;
   display: block;
 }
-.header__navigation li button:hover, .header__navigation li a:hover {
-  color: #FAB900;
+.header__navigation li button:hover,
+.header__navigation li a:hover {
+  color: #fab900;
   font-weight: 600;
   transform: scale(1.03);
 }
@@ -68,14 +71,14 @@ button {
   gap: 43px;
 }
 .header__registration-sign {
-  color: #1F1C14;
+  color: #1f1c14;
 }
 .header__registration-sign:hover {
-  border-bottom: 1px solid #1F1C14;
+  border-bottom: 1px solid #1f1c14;
 }
 .header__registration-login {
   color: #fff;
-  background-color: #362B0E;
+  background-color: #362b0e;
   border-radius: 16px;
   padding: 16px 37.5px;
   transition: transform ease-in-out 0.1s;
@@ -85,7 +88,7 @@ button {
 }
 .header__registration-logout {
   color: #fff;
-  background-color: #362B0E;
+  background-color: #362b0e;
   border-radius: 16px;
   padding: 16px 37.5px;
   transition: transform ease-in-out 0.1s;
@@ -138,7 +141,7 @@ button {
   padding-top: 5px;
   border: none;
   outline: none;
-  border-bottom: 1px solid #0A033C;
+  border-bottom: 1px solid #0a033c;
   width: 100%;
   font-size: 18px;
 }
@@ -172,7 +175,7 @@ button {
 }
 
 .main {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   margin-top: 27px;
 }
 .main__wrapper {
@@ -194,7 +197,7 @@ button {
   margin-top: 16px;
 }
 .main__title button {
-  background-color: #FABA00;
+  background-color: #faba00;
   font-weight: 500;
   color: #000;
   font-size: 24px;
@@ -218,7 +221,7 @@ button {
 }
 
 .catalog {
-  background-color: #F9F9F9;
+  background-color: #f9f9f9;
   width: 100%;
   margin-top: 27px;
 }
@@ -226,7 +229,7 @@ button {
   display: flex;
   align-items: center;
   gap: 5px;
-  color: #1F1C14;
+  color: #1f1c14;
   padding-top: 24px;
 }
 .catalog__navigation p {
@@ -261,7 +264,7 @@ button {
   width: 452px;
 }
 .catalog__banner-text button {
-  background-color: #FABA00;
+  background-color: #faba00;
   font-weight: 500;
   color: #000;
   font-size: 24px;
@@ -277,4 +280,55 @@ button {
 }
 .catalog__banner-image {
   margin-left: 200px;
-}/*# sourceMappingURL=App.css.map */
+}
+
+.lessons__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 150px;
+  background-color: #F9F9F9;
+  padding-bottom: 150px;
+}
+.lessons__text {
+  width: 817px;
+  height: 148px;
+  gap: 16px;
+}
+.lessons__mainText {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 55px;
+  max-width: 810px;
+  max-height: 55px;
+}
+.lessons__paragraph {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(31, 28, 20, 0.6980392157);
+  max-width: 817px;
+  max-height: 77px;
+  padding-top: 16px;
+}
+.lessons__items {
+  width: 1148px;
+  height: 101px;
+  max-height: 101px;
+  gap: 36px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.lessons__item {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  width: 260px;
+  height: 101px;
+  padding: 20px 32px 20px 32px;
+  background-color: #fff;
+  border-radius: 5px;
+}
