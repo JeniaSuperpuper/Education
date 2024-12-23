@@ -1,11 +1,8 @@
-from email.policy import default
-
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.db.models import CASCADE
 
 from apps.courses.models import Course
-from apps.courses.serializers import CourseSerializer
 
 
 class CustomUser(AbstractUser):
@@ -20,6 +17,7 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return self.email

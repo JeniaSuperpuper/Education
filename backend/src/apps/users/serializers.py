@@ -1,6 +1,15 @@
 from rest_framework import serializers
 from apps.users.models import CustomUser, Child, Parent
 from django.contrib.auth.password_validation import validate_password
+from rest_framework import serializers
+from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
+from django.conf import settings
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -36,9 +45,6 @@ class ChildSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-
-
-
 class ParentRegistrationSerializer(serializers.ModelSerializer):
     phone_number = serializers.CharField(max_length=32, required=True)
     password = serializers.CharField(write_only=True)
@@ -52,12 +58,13 @@ class ParentRegistrationSerializer(serializers.ModelSerializer):
         phone_number = validated_data.pop('phone_number')
         user = CustomUser.objects.create(
             **validated_data,
-            role='P'  # Устанавливаем роль родителя
+            role='P'
         )
         user.set_password(password)
         user.save()
         Parent.objects.create(user=user, phone_number=phone_number)
         return user
+
 
 class ChildCreationSerializer(serializers.ModelSerializer):
     name = serializers.CharField(max_length=128)
@@ -84,4 +91,33 @@ class ChildCreationSerializer(serializers.ModelSerializer):
         user.save()
 
         Child.objects.create(user=user, parent=parent, name=name, age=age)
+        return user
+
+
+class RegistrationSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = User
+        fields = ['email', 'password', 'username']
+
+    def create(self, validated_data):
+        user = User.objects.create_user(
+            email=validated_data['email'],
+            username=validated_data['username'],
+            password=validated_data['password'],
+        )
+
+        token = default_token_generator.make_token(user)
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+
+        verification_link = f"{settings.FRONTEND_URL}/verify-email/{uid}/{token}/"
+
+        send_mail(
+            subject="Подтвердите ваш email",
+            message=f"Пожалуйста, перейдите по ссылке для подтверждения: {verification_link}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+        )
+
         return user
