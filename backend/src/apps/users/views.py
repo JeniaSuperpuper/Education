@@ -1,8 +1,9 @@
 from rest_framework.views import APIView
+from yaml import serialize
 
 from apps.users.serializers import UserSerializer, ChildSerializer, ParentRegistrationSerializer, \
     ChildCreationSerializer
-from apps.users.models import CustomUser, Child
+from apps.users.models import CustomUser, Child, Parent
 from rest_framework import generics, status
 from rest_framework.decorators import api_view, permission_classes
 from django.http import HttpRequest
@@ -21,6 +22,12 @@ class UsersUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
 
 @api_view(['GET'])
 def child_list(request: HttpRequest):
+    """
+    ПИСАЛ ЛЕГЕНДА КАРАПУЗОВИЧ
+
+    :param request:
+    :return:
+    """
     child = Child.objects.all()
     serializer = ChildSerializer(child, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
@@ -48,3 +55,13 @@ class AddChildView(APIView):
             serializer.save()
             return Response({"message": "Child added successfully"}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+
+@api_view(['GET'])
+def parent_children(request, id):
+    children = Child.objects.filter(parent=id)
+    serializer = ChildSerializer(children, many=True)
+    return Response(serializer.data, status=status.HTTP_200_OK)
