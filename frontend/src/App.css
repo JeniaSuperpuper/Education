@@ -281,3 +281,54 @@ button {
 .catalog__banner-image {
   margin-left: 200px;
 }
+
+.lessons__container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  padding-top: 150px;
+  background-color: #F9F9F9;
+  padding-bottom: 150px;
+}
+.lessons__text {
+  width: 817px;
+  height: 148px;
+  gap: 16px;
+}
+.lessons__mainText {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 55px;
+  max-width: 810px;
+  max-height: 55px;
+}
+.lessons__paragraph {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(31, 28, 20, 0.6980392157);
+  max-width: 817px;
+  max-height: 77px;
+  padding-top: 16px;
+}
+.lessons__items {
+  width: 1148px;
+  height: 101px;
+  max-height: 101px;
+  gap: 36px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+.lessons__item {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  width: 260px;
+  height: 101px;
+  padding: 20px 32px 20px 32px;
+  background-color: #fff;
+  border-radius: 5px;
+}
