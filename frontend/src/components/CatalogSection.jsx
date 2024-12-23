@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Добавьте этот импорт
 import image from '../assets/images/Catalog_image.png';
+import CatalogSearch from './CatalogSearch';
 
 export default function Catalog() {
     return (
@@ -22,6 +23,7 @@ export default function Catalog() {
                             <img src={image} alt="img" />
                         </div>
                     </div>
+                    <CatalogSearch/>
                 </div>
             </div>
         </section>
