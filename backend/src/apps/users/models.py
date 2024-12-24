@@ -36,7 +36,7 @@ class Child(models.Model):
     age = models.PositiveSmallIntegerField()
     parent = models.ForeignKey(Parent, on_delete=models.CASCADE, related_name='children')
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='child')
-    course = models.ForeignKey(Course, on_delete=CASCADE, null=True, blank=True)
+    course = models.ManyToManyField(Course, null=True, blank=True)
 
     def __str__(self):
         return f"Имя ребёнка: {self.name}, Имя родителя: {self.parent.user.username}"
@@ -44,3 +44,6 @@ class Child(models.Model):
 
 class Teacher(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, related_name='teacher')
+
+    def __str__(self):
+        return self.user.email

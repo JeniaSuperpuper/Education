@@ -8,12 +8,6 @@ def create_related_profile(sender, instance, created, **kwargs):
     if created:
         if instance.role == "P":
             Parent.objects.create(user=instance)
-        elif instance.role == "C":
-            parent = Parent.objects.first()
-            if parent:
-                Child.objects.create(user=instance, parent=parent)
-            else:
-                raise ValueError("Родитель для ребёнка не найден.")
         elif instance.role == "T":
             Teacher.objects.create(user=instance)
 

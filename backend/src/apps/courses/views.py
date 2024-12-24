@@ -25,6 +25,7 @@ class CategoryUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     """
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
+    lookup_field = 'slug'
 
 
 class CourseList(generics.ListCreateAPIView):

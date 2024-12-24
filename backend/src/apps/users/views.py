@@ -59,12 +59,13 @@ class AddChildView(APIView):
 
         child_name = request.data.get("name")
         child_age = request.data.get("age")
+        child_email = request.data.get("email")
 
         if not child_name or not child_age:
             return Response({"error": "Имя и возраст обязательны"}, status=status.HTTP_400_BAD_REQUEST)
 
         parent = Parent.objects.get(user=parent_user)
-        child_user = CustomUser.objects.create(username=child_name, role="C")
+        child_user = CustomUser.objects.create(username=child_name, role="C", email=child_email)
         child = Child.objects.create(name=child_name, age=child_age, user=child_user, parent=parent)
 
         return Response({"message": "Ребенок успешно добавлен", "child_id": child.id}, status=status.HTTP_201_CREATED)
