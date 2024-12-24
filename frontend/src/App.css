@@ -283,10 +283,10 @@ button {
   margin-left: 200px;
 }
 .catalog__filter {
-  display: flex;
-  justify-content: center;
   gap: 20px;
   margin-top: 56px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 .catalog__filter button {
   font-size: 16px;
@@ -300,6 +300,21 @@ button {
 .catalog__filter button:hover {
   background-color: #1f1c14;
   color: #fff;
+}
+.catalog__filter-all {
+  outline: #faba00 1px solid;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #fff;
+  padding: 18px 50px;
+  color: #1f1c14;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.catalog__filter-all:hover {
+  background-color: #1f1c14;
+  color: #fff;
+  outline: none;
 }
 .catalog__ss-wrapper {
   display: flex;
@@ -350,6 +365,34 @@ button {
   outline: none;
   padding-left: 15px;
   font-size: 18px;
+}
+.catalog__card-block {
+  align-items: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+.catalog__card {
+  background-color: #fff;
+  width: 302px;
+  border-radius: 14px;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 20px;
+}
+.catalog__card-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #1f1c14 !important;
+  color: #fff !important;
+  padding: 18px 50px;
+  color: #1f1c14;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .verify {
