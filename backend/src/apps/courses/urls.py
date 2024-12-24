@@ -18,4 +18,6 @@ urlpatterns = [
          views.CategoryCourseLessonsDetail.as_view(),
          name='category_course_lessons_list'),
 
+    path('search/', views.CourseSearch.as_view(), name='course_search')
+
 ]

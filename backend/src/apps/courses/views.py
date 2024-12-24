@@ -1,6 +1,7 @@
 from apps.courses.serializers import CategorySerializer, Category, CourseSerializer, Course, LessonSerializer, Lesson
 from rest_framework import generics, mixins
 from django.shortcuts import get_object_or_404
+from rest_framework.filters import SearchFilter
 
 
 class CategoryList(generics.ListCreateAPIView):
@@ -152,3 +153,13 @@ class CategoryCourseLessonsDetail(mixins.RetrieveModelMixin, generics.GenericAPI
 
     def get(self, request, *args, **kwargs):
         return self.retrieve(request, *args, **kwargs)
+
+
+class CourseSearch(generics.ListAPIView):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+    filter_backends = [SearchFilter]
+    search_fields = ['title', 'description']
+
+
+

@@ -51,6 +51,22 @@ export default function CatalogSearch() {
         setSelectedCategory(category.id === selectedCategory?.id ? null : category); // Переключаем выбранную категорию
     };
 
+    const [query, setQuery] = useState('');
+const [results, setResults] = useState([]);
+
+const handleSearch = async () => {
+  try {
+    const response = await fetch(`http://127.0.0.1:8000/api/v1/courses/search/?search=${query}`);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const data = await response.json();
+    setResults(data);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
     return (
         <>
             <div className="catalog__filter">
@@ -66,9 +82,23 @@ export default function CatalogSearch() {
                 ))}
             </div>
             <div className="catalog__ss-wrapper">
+
                 <div className="catalog__search">
-                    <input type="search" placeholder='Search Course, Teacher name' />
-                    <button type='submit'><img src={lupazapupupupazalupu} alt="search" /></button>
+                    <input
+                        type="search"
+                        placeholder="Search Course"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                    />
+                    <button onClick={handleSearch}><img src={lupazapupupupazalupu} alt="search" /></button>
+
+                    <ul>
+                        {results.map((item) => (
+                        <li key={item.id}>
+                            {item.name} - {item.description}
+                        </li>
+                        ))}
+                    </ul>
                 </div>
                 <div className="catalog__sort">
                     <label htmlFor="select">Sort by:</label>
