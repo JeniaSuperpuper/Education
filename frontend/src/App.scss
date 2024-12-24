@@ -341,10 +341,10 @@ button {
   }
 
   &__filter{
-    display: flex;
-    justify-content: center;
     gap: 20px;
     margin-top: 56px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
 
     button{
         font-size: 16px;
@@ -359,6 +359,21 @@ button {
             background-color: $text_main;
             color: #fff;
         }
+    }
+    &-all{
+      outline: $yellow_bg-color 1px solid;
+      font-size: 16px;
+      font-weight: 500;
+      background-color: #fff;
+      padding: 18px 50px;
+      color: $text_main;
+      border-radius: 12px;
+      cursor: pointer;
+      &:hover{
+        background-color: $text_main;
+        color: #fff;
+        outline: none;
+    }
     }
   }
   &__ss-wrapper{
@@ -415,6 +430,36 @@ button {
         font-size: 18px;
     }
   }
+
+  &__card-block{
+    align-items: center;
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  &__card{
+    background-color: #fff;
+    width: 302px;
+    border-radius: 14px;
+    height: max-content;
+    padding-bottom: 20px;
+
+    &-wrapper{
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.active{
+  font-size: 16px;
+  font-weight: 500;
+  background-color: $text_main !important;
+  color: #fff !important;
+  padding: 18px 50px;
+  color: $text_main;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 .verify{

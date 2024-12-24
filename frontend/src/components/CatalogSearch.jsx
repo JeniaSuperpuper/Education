@@ -70,7 +70,7 @@ const handleSearch = async () => {
     return (
         <>
             <div className="catalog__filter">
-                <button onClick={() => setSelectedCategory(null)}>All Courses</button>
+                <button className='catalog__filter-all' onClick={() => setSelectedCategory(null)}>All Courses</button>
                 {categories.map((category) => (
                     <button
                         key={category.id}
@@ -107,26 +107,35 @@ const handleSearch = async () => {
                     </select>
                 </div>
             </div>
-            <div className="catalog__courses">
+            <div className="catalog__card-block">
                 {selectedCategory ? (
                     // Если выбрана категория, показываем её курсы
-                    coursesByCategory[selectedCategory.slug]?.map((course) => (
-                        <div key={course.id} className="catalog__course">
-                            <h3>{course.title}</h3>
-                            <p>{course.description}</p>
-                        </div>
-                    ))
+                    <div className="catalog__card-wrapper">
+                        {coursesByCategory[selectedCategory.slug]?.map((course) => (
+                            <div key={course.id} className="catalog__card">
+                                <img src={course.image} alt="img" />
+                                <h3>{course.title}</h3>
+                                <p>{course.description}</p>
+                                <h4>{course.price}</h4>
+                            </div>
+                        ))}
+                    </div>
                 ) : (
+                    
                     // Если категория не выбрана, показываем все курсы из всех категорий
                     categories.map((category) => (
-                        <div key={category.id}>
+                        <div className='catalog__card-block' key={category.id}>
                             <h2>{category.title}</h2>
+                            <div className="catalog__card-wrapper">
                             {coursesByCategory[category.slug]?.map((course) => (
-                                <div key={course.id} className="catalog__course">
-                                    <h3>{course.title}</h3>
-                                    <p>{course.description}</p>
-                                </div>
+                                    <div className='catalog__card' key={course.id}>
+                                        <img src={course.image} alt="img" />
+                                        <h3>{course.title}</h3>
+                                        <p>{course.description}</p>
+                                        <h4>{course.price}</h4>
+                                    </div>
                             ))}
+                            </div>
                         </div>
                     ))
                 )}
