@@ -8,11 +8,6 @@ export default function Catalog() {
         <section className="catalog">
             <div className="container">
                 <div className="catalog__wrapper">
-                    <div className="catalog__navigation">
-                        <Link to="/">Home</Link> {/* Используем Link для навигации */}
-                        <p>|</p>
-                        <button>Pricing</button>
-                    </div>
                     <div className="catalog__banner">
                         <div className="catalog__banner-text">
                             <h1>Edudu offers you a 30% discount this season</h1>
