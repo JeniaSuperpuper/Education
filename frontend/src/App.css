@@ -485,10 +485,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1440px;
-  max-height: 736px;
+  max-width: 100%;
+  max-height: 590.53px;
   padding-top: 73px;
   padding-bottom: 72.47px;
+  gap: 150px;
 }
 .about__image {
   max-width: 633.43px;
@@ -534,4 +535,71 @@ button {
   font-size: 24px;
   gap: 25px;
   line-height: 33.6px;
-}/*# sourceMappingURL=App.css.map */
+}
+
+.choice__container {
+  max-width: 100%;
+  height: 721px;
+  margin-top: 150px;
+  gap: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, white 60%, #fab900 40%);
+}
+.choice__head-text {
+  width: 724px;
+  height: 55px;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 55px;
+  padding-bottom: 60px;
+}
+.choice__cards {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  gap: 40px;
+  padding-top: 60px;
+}
+.choice__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 493px;
+  border-radius: 30px;
+  background-color: white;
+}
+.choice__card-allText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 322px;
+  height: 204px;
+  gap: 12px;
+  padding: 20px;
+}
+.choice__card-img {
+  width: 126px;
+  height: 126px;
+}
+.choice__card-text {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 42px;
+  width: 302px;
+  height: 42px;
+  padding-top: 80px;
+}
+.choice__card-paragraph {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 30px;
+  padding-top: 40px;
+  width: 322px;
+  height: 150px;
+  color: rgba(31, 28, 20, 0.7137254902);
+}
