@@ -485,10 +485,11 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1440px;
+  max-width: 100%;
   max-height: 590.53px;
   padding-top: 73px;
   padding-bottom: 72.47px;
+  gap: 150px;
 }
 .about__image {
   max-width: 633.43px;
