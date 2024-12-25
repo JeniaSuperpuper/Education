@@ -339,7 +339,7 @@ button {
   align-items: center;
   justify-content: center;
   max-width: 1440px;
-  max-height: 590.53px;
+  max-height: 736px;
   padding-top: 73px;
   padding-bottom: 72.47px;
 }
@@ -371,19 +371,20 @@ button {
   display: flex;
   flex-direction: column;
   align-items: start;
+  gap: 24px;
 }
 .about__paragraph {
   display: flex;
   align-items: center;
   width: 449px;
   height: 34px;
-  gap: 16px;
   padding-bottom: 24px;
 }
 .about__paragraph-text {
-  width: 405px;
+  width: 500px;
   height: 34px;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 24px;
+  gap: 25px;
   line-height: 33.6px;
 }

@@ -395,8 +395,8 @@ button {
   }
 }
 
-.about{
-  &__container{
+.about {
+  &__container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -405,47 +405,48 @@ button {
     padding-top: 73px;
     padding-bottom: 72.47px;
   }
-  &__image{
+  &__image {
     max-width: 633.43px;
     max-height: 590.53px;
   }
-  &__text{
+  &__text {
     max-width: 553px;
     max-height: 411px;
     gap: 41px;
     display: flex;
     flex-direction: column;
   }
-  &__checkbox{
+  &__checkbox {
     max-width: 28px;
     max-height: 28px;
   }
-  &__mainText{
+  &__mainText {
     max-width: 500px;
     max-height: 186px;
-    &-text{
+    &-text {
       font-weight: 900;
       font-size: 48px;
       line-height: 62.4px;
     }
   }
-  &__paragraphes{
+  &__paragraphes {
     display: flex;
     flex-direction: column;
     align-items: start;
+    gap: 24px;
   }
-  &__paragraph{
+  &__paragraph {
     display: flex;
     align-items: center;
     width: 449px;
     height: 34px;
-    gap: 16px;
     padding-bottom: 24px;
-    &-text{
-      width: 405px;
+    &-text {
+      width: 500px;
       height: 34px;
-      font-weight: 900;
+      font-weight: 400;
       font-size: 24px;
+      gap: 25px;
       line-height: 33.6px;
     }
   }
