@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/images/logo.svg';
 import RegistrationForm from './registration';
 import AuthForm from './login';
@@ -10,6 +10,12 @@ export default function Header() {
   const [modalActive, setModalActive] = useState(false);
   const [modalActiveLogin, setModalActiveLogin] = useState(false);
   const { user, logout } = useAuth();
+  const location = useLocation()
+  console.log(useLocation());
+  
+  const getButtonStyle = (path) => {
+    return location.pathname === path ? {color: '#FAB900'} : {}
+  }
 
   return (
     <header className="header">
@@ -22,7 +28,7 @@ export default function Header() {
             </Link>
           </div>
           <ul className="header__navigation">
-            <li><Link to="/catalog">Course</Link></li>
+            <li><Link to="/catalog" style={getButtonStyle('/catalog')}>Course</Link></li>
             <li><button href="#">Teacher</button></li>
             <li><button href="#">How to use</button></li>
             <li><button href="#">About Us</button></li>
