@@ -1,7 +1,7 @@
 import image from "../assets/images/Main_photo.png";
 import About from "./About";
 import Lessons from "./LessonsSection";
-
+import Choice from "./Choice";
 export default function Main() {
   return (
     <>
@@ -29,6 +29,7 @@ export default function Main() {
       </section>
       <Lessons />
       <About />
+      <Choice/>
     </>
   );
 }
