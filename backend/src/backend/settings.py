@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'apps.reviews.apps.ReviewsConfig',
     'apps.cart.apps.CartConfig',
     'apps.shop.apps.ShopConfig',
+    'apps.feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,15 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'users.CustomUser'
 
 ROOT_URLCONF = 'backend.urls'
+
+CELERY_TASK_ALWAYS_EAGER = True
+# Настройки Celery
+CELERY_BROKER_URL = 'memory://'  # Используем встроенный брокер в памяти
+CELERY_RESULT_BACKEND = 'rpc://'
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
 
 TEMPLATES = [
     {

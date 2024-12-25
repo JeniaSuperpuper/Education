@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/v1/users/', include('apps.users.urls')),
     path('api/v1/courses/', include('apps.courses.urls')),
+    path('api/v1/feedback/', include('apps.feedback.urls')),
     path('api/v1/reviews/', include('apps.reviews.urls')),
 
     path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
