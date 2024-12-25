@@ -108,12 +108,13 @@ button {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   align-items: center;
   pointer-events: none;
   opacity: 0;
+  z-index: 99;
 }
 .modal.active {
   pointer-events: all;
@@ -225,23 +226,8 @@ button {
   width: 100%;
   margin-top: 27px;
 }
-.catalog__navigation {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #1f1c14;
-  padding-top: 24px;
-}
-.catalog__navigation p {
-  opacity: 0.4;
-}
-.catalog__navigation button {
-  font-size: 16px;
-  opacity: 0.4;
-  cursor: pointer;
-}
-.catalog__navigation button:hover {
-  opacity: 1;
+.catalog__wrapper {
+  padding-top: 50px;
 }
 .catalog__banner {
   background: url(./assets/images/Catalog_bg.svg) no-repeat center center/cover;
@@ -347,6 +333,7 @@ button {
   cursor: pointer;
   position: relative;
   right: 55px;
+  z-index: 0;
 }
 .catalog__sort {
   background-color: #fff;
@@ -370,21 +357,80 @@ button {
   align-items: center;
   gap: 20px;
   margin-top: 25px;
+  padding-bottom: 80px;
 }
 .catalog__card {
   background-color: #fff;
-  width: 302px;
+  width: 300px;
   border-radius: 14px;
-  height: -moz-max-content;
-  height: max-content;
   padding-bottom: 20px;
+  height: 470px;
+}
+.catalog__card-desc {
+  height: 100px;
+  min-height: 1px;
 }
 .catalog__card-wrapper {
+  display: grid;
+  gap: 20px;
+  margin-top: 25px;
+  grid-template-columns: repeat(4, 1fr);
+}
+.catalog__card-price {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: end;
+}
+.catalog__card img {
+  width: 100%;
+  border-radius: 14px 14px 0 0;
+  height: 200px;
+}
+.catalog__card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  width: 265px;
+  color: #1f1c14;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+.catalog__card p {
+  font-size: 14px;
+  color: #1F1C14;
+  opacity: 0.7;
+  padding-left: 20px;
+  width: 265px;
+  margin-top: 5px;
+}
+.catalog__card h4 {
+  font-size: 18px;
+  color: #F15911;
+  font-weight: 600;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+.catalog__card a {
+  background-color: #faba00;
+  font-weight: 600;
+  padding: 5px 15px;
+  border-radius: 15px;
+  display: block;
+  width: -moz-max-content;
+  width: max-content;
+  margin: 40px auto 0 auto;
+  color: #000;
+  transition: all ease-in-out 0.2s;
+}
+.catalog__card a:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+.catalog__price {
+  display: flex;
+  flex-direction: column;
 }
 
-.active {
+.activeBtn {
   font-size: 16px;
   font-weight: 500;
   background-color: #1f1c14 !important;
