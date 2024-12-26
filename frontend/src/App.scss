@@ -143,11 +143,20 @@ button {
   pointer-events: none;
   opacity: 0;
   z-index: 99;
-
+  &__close-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 30px;
+  }
+  &__close-btn:hover{
+    cursor: pointer;
+  }
   &.active {
     pointer-events: all;
     opacity: 1;
   }
+  
 
   &__content {
     background: white;

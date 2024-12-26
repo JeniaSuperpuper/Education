@@ -116,6 +116,15 @@ button {
   opacity: 0;
   z-index: 99;
 }
+.modal__close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 30px;
+}
+.modal__close-btn:hover {
+  cursor: pointer;
+}
 .modal.active {
   pointer-events: all;
   opacity: 1;
@@ -645,4 +654,4 @@ button {
   width: 322px;
   height: 150px;
   color: rgba(31, 28, 20, 0.7137254902);
-}
+}/*# sourceMappingURL=App.css.map */
